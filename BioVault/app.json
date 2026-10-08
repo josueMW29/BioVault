@@ -1,0 +1,52 @@
+{
+  "expo": {
+    "name": "BioVault",
+    "slug": "biovault",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icons/icon.png",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "image": "./assets/icons/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0A0E17"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSFaceIDUsageDescription": "BioVault necesita acceso a Face ID para proteger tus archivos privados.",
+        "NSPhotoLibraryUsageDescription": "BioVault necesita acceso para importar fotos y videos a la bóveda.",
+        "NSCameraUsageDescription": "BioVault necesita acceso a la cámara."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/icons/adaptive-icon.png",
+        "backgroundColor": "#0A0E17"
+      },
+      "permissions": [
+        "USE_BIOMETRIC",
+        "USE_FINGERPRINT",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE"
+      ]
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-local-authentication",
+        {
+          "faceIDPermission": "Permite a BioVault usar Face ID para desbloquear tu bóveda privada."
+        }
+      ],
+      "expo-secure-store",
+      [
+        "expo-document-picker",
+        {
+          "appleTeamId": "YOUR_TEAM_ID"
+        }
+      ]
+    ]
+  }
+}

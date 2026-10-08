@@ -1,0 +1,70 @@
+{
+  "expo": {
+    "name": "BioVault",
+    "slug": "BioVault",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "biovault",
+    "userInterfaceStyle": "dark",
+    "backgroundColor": "#0F172A",
+    "ios": {
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSFaceIDUsageDescription": "Permite el acceso a Face ID para desbloquear tu bóveda de archivos privados."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#0F172A",
+        "foregroundImage": "./assets/images/icon.png"
+      },
+      "permissions": [
+        "USE_BIOMETRIC",
+        "USE_FINGERPRINT",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE"
+      ],
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "output": "static",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#0F172A",
+          "image": "./assets/images/icon.png",
+          "imageWidth": 76
+        }
+      ],
+      "expo-secure-store",
+      "expo-video",
+      "expo-sharing",
+      [
+        "expo-local-authentication",
+        {
+          "faceIDPermission": "Permite el acceso a Face ID para desbloquear tu bóveda."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Permite el acceso a tu galería para importar fotos y videos a tu bóveda privada."
+        }
+      ],
+      [
+        "expo-document-picker",
+        {
+          "appleTeamId": "YOUR_TEAM_ID"
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
